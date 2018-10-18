@@ -1,0 +1,21 @@
+{
+	"logger": {
+		"exitOnError": true,
+		"console": {
+			"level": "silly"
+		},
+		"file": {
+			"level": "info",
+			"filename": "./logs/dev/server",
+			"datepattern": "yyyy-MM-dd.log",
+			"maxsize": "3000",
+			"maxFiles": "5"
+		}
+	},
+	"maxNumberOfLogFile": 30,
+	"intervalOfLogFileDeletion": 86400000,
+	"morgan": {
+		"format": "dev"
+	},
+	"port": "6001"
+}

@@ -1,0 +1,18 @@
+{
+	"logger": {
+		"exitOnError": true,
+		"file": {
+			"level": "info",
+			"filename": "./logs/prod/server",
+			"datepattern": "yyyy-MM-dd.log",
+			"maxsize": "3000",
+			"maxFiles": "5"
+		}
+	},
+	"maxNumberOfLogFile": 30,
+	"intervalOfLogFileDeletion": 86400000,
+	"morgan": {
+		"format": "combined"
+	},
+	"port": "6001"
+}

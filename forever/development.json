@@ -1,0 +1,7 @@
+{
+    "uid": "rainy",
+    "append": true,
+    "script": "www",
+    "sourceDir": "/home/kasori-ko/bot/rainy/bin",
+    "workingDir": "/home/kasori-ko/bot/rainy"
+}

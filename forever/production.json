@@ -1,0 +1,7 @@
+{
+    "uid": "rainy",
+    "append": true,
+    "script": "www",
+    "sourceDir": "/opt/chatbot/rainy/bin",
+    "workingDir": "/opt/chatbot/rainy"
+}

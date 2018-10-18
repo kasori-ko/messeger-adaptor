@@ -1,0 +1,90 @@
+2018-10-18 13:41:48.492 - info: sqlite3 initialized.
+2018-10-18 13:41:48.505 - info: Node app is running at localhost:6001
+2018-10-18 13:43:20.812 - info: sqlite3 initialized.
+2018-10-18 13:43:20.823 - info: Node app is running at localhost:6001
+2018-10-18 13:47:01.469 - info: [0mPOST /integration/adaptor [32m200 [0m20.035 ms - 16[0m
+
+2018-10-18 13:47:38.239 - info: sqlite3 initialized.
+2018-10-18 13:47:38.250 - info: Node app is running at localhost:6001
+2018-10-18 13:47:46.319 - info: [0mPOST /integration/adaptor [32m200 [0m21.679 ms - 16[0m
+
+2018-10-18 13:47:59.420 - info: sqlite3 initialized.
+2018-10-18 13:47:59.430 - info: Node app is running at localhost:6001
+2018-10-18 13:48:06.382 - info: [0mPOST /integration/adaptor [32m200 [0m17.818 ms - 16[0m
+
+2018-10-18 13:48:56.884 - info: sqlite3 initialized.
+2018-10-18 13:48:56.915 - info: Node app is running at localhost:6001
+2018-10-18 13:49:02.291 - info: [0mPOST /integration/adaptor [32m200 [0m16.895 ms - 16[0m
+
+2018-10-18 13:50:56.594 - info: sqlite3 initialized.
+2018-10-18 13:50:56.603 - info: Node app is running at localhost:6001
+2018-10-18 13:50:59.399 - info: [0mPOST /integration/adaptor [32m200 [0m27.979 ms - 16[0m
+
+2018-10-18 13:51:54.651 - info: sqlite3 initialized.
+2018-10-18 13:51:54.664 - info: Node app is running at localhost:6001
+2018-10-18 13:51:58.076 - info: [0mPOST /integration/adaptor [32m200 [0m29.420 ms - 16[0m
+
+2018-10-18 13:52:19.005 - info: sqlite3 initialized.
+2018-10-18 13:52:19.014 - info: Node app is running at localhost:6001
+2018-10-18 13:52:23.977 - info: sqlite3 initialized.
+2018-10-18 13:52:23.987 - info: Node app is running at localhost:6001
+2018-10-18 13:52:26.337 - info: [0mPOST /integration/adaptor [32m200 [0m27.919 ms - 16[0m
+
+2018-10-18 13:52:26.489 - error: UserSearch : TypeError: sqliteService.insertHistory is not a function
+2018-10-18 13:52:51.659 - info: sqlite3 initialized.
+2018-10-18 13:52:51.670 - info: Node app is running at localhost:6001
+2018-10-18 13:54:04.255 - info: sqlite3 initialized.
+2018-10-18 13:54:04.266 - info: Node app is running at localhost:6001
+2018-10-18 13:54:12.543 - info: [0mPOST /integration/adaptor [33m404 [0m12.258 ms - 159[0m
+
+2018-10-18 13:54:50.842 - info: sqlite3 initialized.
+2018-10-18 13:54:50.853 - info: Node app is running at localhost:6001
+2018-10-18 13:54:58.321 - info: [0mPOST /messenger/send [32m200 [0m19.367 ms - 16[0m
+
+2018-10-18 13:57:31.485 - info: [0mPOST /messenger/send [32m200 [0m1.877 ms - 16[0m
+
+2018-10-18 13:57:56.555 - info: [0mPOST /messenger/send [32m200 [0m2.828 ms - 16[0m
+
+2018-10-18 13:57:58.169 - info: sqlite3 initialized.
+2018-10-18 13:57:58.187 - info: Node app is running at localhost:6001
+2018-10-18 13:58:00.273 - info: [0mPOST /messenger/send [32m200 [0m20.190 ms - 16[0m
+
+2018-10-18 13:58:53.852 - info: sqlite3 initialized.
+2018-10-18 13:58:53.865 - info: Node app is running at localhost:6001
+2018-10-18 13:58:56.002 - info: [0mPOST /messenger/send [32m200 [0m17.927 ms - 16[0m
+
+2018-10-18 13:59:02.487 - info: sqlite3 initialized.
+2018-10-18 13:59:02.497 - info: Node app is running at localhost:6001
+2018-10-18 13:59:17.086 - info: [0mPOST /messenger/send [32m200 [0m19.533 ms - 16[0m
+
+2018-10-18 14:06:34.635 - info: sqlite3 initialized.
+2018-10-18 14:06:34.648 - info: Node app is running at localhost:6001
+2018-10-18 14:06:59.866 - info: sqlite3 initialized.
+2018-10-18 14:06:59.879 - info: Node app is running at localhost:6001
+2018-10-18 14:07:04.624 - info: sqlite3 initialized.
+2018-10-18 14:07:04.635 - info: Node app is running at localhost:6001
+2018-10-18 14:07:07.375 - info: [0mPOST /messenger/send [32m200 [0m181.624 ms - 16[0m
+
+2018-10-18 14:07:24.723 - info: [0mGET /messenger/talks [33m404 [0m1.410 ms - 154[0m
+
+2018-10-18 14:07:32.988 - info: sqlite3 initialized.
+2018-10-18 14:07:32.998 - info: Node app is running at localhost:6001
+2018-10-18 14:07:34.223 - info: [0mGET /messenger/talks [32m200 [0m3.010 ms - 49[0m
+
+2018-10-18 14:07:34.751 - error: UserSearch : Error: Can't set headers after they are sent.
+2018-10-18 14:07:42.719 - info: sqlite3 initialized.
+2018-10-18 14:07:42.731 - info: Node app is running at localhost:6001
+2018-10-18 14:07:44.227 - info: [0mGET /messenger/talks [32m200 [0m306.278 ms - 8599[0m
+
+2018-10-18 14:10:24.584 - info: sqlite3 initialized.
+2018-10-18 14:10:24.596 - info: Node app is running at localhost:6001
+2018-10-18 14:10:31.869 - info: sqlite3 initialized.
+2018-10-18 14:10:31.881 - info: Node app is running at localhost:6001
+2018-10-18 14:10:51.226 - info: [0mGET /messenger/talks [32m200 [0m284.501 ms - 8599[0m
+
+2018-10-18 14:11:20.825 - info: [0mGET /messenger/messages/5ba1fe44e4b0d24a2c70fe5b@muc.lmdevelop.lakeel.com [32m200 [0m75.264 ms - 333[0m
+
+2018-10-18 14:12:07.064 - info: sqlite3 initialized.
+2018-10-18 14:12:07.075 - info: Node app is running at localhost:6001
+2018-10-18 14:12:10.047 - info: [0mGET /messenger/messages/5ba1fe44e4b0d24a2c70fe5b@muc.lmdevelop.lakeel.com [32m200 [0m163.929 ms - 15[0m
+
