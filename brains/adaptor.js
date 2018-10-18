@@ -89,3 +89,9 @@ router.get('/messages/:to', function (req, res) {
 
 })
 module.exports = router
+
+
+router.get('/', function (req, res) {
+	res.status = 200
+	res.json({ message: `ok` })
+})
