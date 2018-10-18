@@ -8,7 +8,6 @@ const router = express.Router()
 
 const messenger = require('../messenger')
 const logger = require('../common/logger')
-const sqliteService = require('../sqlite/service')
 const fs = require('fs');
 
 let apiKey;
