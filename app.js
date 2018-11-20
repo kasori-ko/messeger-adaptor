@@ -23,10 +23,6 @@ app.options('*', function (req, res) {
 // Utilsロード
 require('./utils/stringUtils')
 
-// sqliteの初期化
-// require('./sqlite/db')
-// const sqliteService = require('./sqlite/service')
-// sqliteService.init()
 
 app.use('/messenger', require('./brains/adaptor'))
 

@@ -1,9 +1,6 @@
 "use strict"
 const express = require('express')
 const co = require('co')
-const request = require('request')
-const schedule = require('node-schedule')
-const config = require('config')
 const router = express.Router()
 
 const messenger = require('../messenger')
@@ -39,8 +36,6 @@ domain = `@lmdevelop.lakeel.com`
 // domain = `@xmpp.legendapl.com`
 // }
 
-let bot = new messenger.Client(hostname, apiKey, secretKey)
-
 router.post('/send', function (req, res) {
 	let messageJson;
 	try {
@@ -50,10 +45,10 @@ router.post('/send', function (req, res) {
 		res.json({ error: 'JSON parse error. Check request body.' })
 	}
 	co(function* () {
-
-		yield bot.sendMessage(developer, `
+		let bot = new messenger.Client(hostname, apiKey, secretKey)
+		console.log(yield bot.sendMessage(developer, `
 		「${messageJson.message}」
-		`.dedent())
+		`.dedent()))
 		res.status = 200
 		res.json({ message: 'OK' })
 
