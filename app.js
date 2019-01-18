@@ -7,7 +7,7 @@ const logger = require('./common/logger')
 const app = express()
 
 app.use(morgan(config.morgan.format, { "stream": logger.stream }))
-app.use(bodyParser.json({ limit: '50mb', type: 'application/json' }))
+app.use(bodyParser.text({ limit: '50mb', type: 'application/json' }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
 app.use(function (req, res, next) {
