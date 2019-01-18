@@ -42,7 +42,7 @@ router.post('/send', function (req, res) {
 		messageJson = JSON.parse(req.body)
 	} catch (e) {
 		res.status = 400
-		res.json({ error: 'JSON parse error. Check request body.' })
+		res.json({ error: `JSON parse error. Check request body.[${req.body}]` })
 	}
 	co(function* () {
 		let bot = new messenger.Client(hostname, apiKey, secretKey)
