@@ -22,11 +22,11 @@ let domain;
 // 	domain = `@kasori-ko.lakeel.com`
 // } else if (process.env.NODE_ENV == 'production') {
 // 本番環境用の値を定義
-apiKey = `6fa435b07f0152ed99895b7d2ea0bd8efe05216c6bc9914d33d29301ccbac5f6`
-secretKey = `c3f8233d777b9ff39fc6b00b77cd59b9d01da001620e3bf253a8984d2211655a`
-hostname = `lmdevelop.lakeel.com`
-developer = `kasori-ko@lmdevelop.lakeel.com`
-domain = `@lmdevelop.lakeel.com`
+apiKey = `bcf4291764dd4ca5075ff64613d34c2ece97a4ed9b71970259282f08694cc632`
+secretKey = `e6ddba4bd17bc5f9c4bd3e8b3e61f48246d23e9550c26f087abb5af46a1a1b02`
+hostname = `lmlai.lakeel.com`
+developer = `kasori-ko@xmpp.legendapl.com`
+domain = `@xmpp.legendapl.com`
 
 // 本番環境用の値を定義
 // apiKey = `00f305a955468f41d74cfdb68d2776a353e5d88ab26f90fcae76914fbd6f6bac`
