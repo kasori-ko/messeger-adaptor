@@ -37,23 +37,18 @@ domain = `@lmdevelop.lakeel.com`
 // }
 
 router.post('/send', function (req, res) {
-	console.log(req.headers)
-	console.log(req.body)
-	let messageJson = req.body;
+	let messageJson;
+	try {
+		messageJson = JSON.parse(req.body)
+	} catch (e) {
+		res.status = 400
+		res.json({ error: 'JSON parse error. Check request body.' })
+	}
 	co(function* () {
 		let bot = new messenger.Client(hostname, apiKey, secretKey)
-
-		let panels = []
-		panels.push({
-			imageUrl:messageJson.imageUrl,
-			body:messageJson.body,
-		})
-
-		console.log(yield bot.sendCarouselMessage(developer, `
+		console.log(yield bot.sendMessage(developer, `
 		「${messageJson.message}」
-		`.dedent(),
-		panels
-		))
+		`.dedent()))
 		res.status = 200
 		res.json({ message: 'OK' })
 
