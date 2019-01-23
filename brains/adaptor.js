@@ -46,6 +46,10 @@ router.post('/send', function (req, res) {
 		return
 	}
 	co(function* () {
+		if(messageJson.message === `JSON parse error. Check request body.`){
+			return;
+		}
+
 		let bot = new messenger.Client(hostname, apiKey, secretKey)
 		console.log(yield bot.sendMessage(developer, `
 		「${messageJson.message}」
