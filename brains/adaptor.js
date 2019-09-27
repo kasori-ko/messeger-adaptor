@@ -57,7 +57,7 @@ router.post("/send", function(req, res) {
     let bot = new messenger.Client(hostname, apiKey, secretKey);
     console.log(
       yield bot.sendMessage(
-        developer,
+        messageJson.to ? messageJson.to : developer,
         `
 		「${messageJson.message}」
 		`.dedent()
