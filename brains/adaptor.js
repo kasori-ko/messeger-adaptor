@@ -1,11 +1,11 @@
-"use strict"
-const express = require('express')
-const co = require('co')
-const router = express.Router()
+"use strict";
+const express = require("express");
+const co = require("co");
+const router = express.Router();
 
-const messenger = require('../messenger')
-const logger = require('../common/logger')
-const fs = require('fs');
+const messenger = require("../messenger");
+const logger = require("../common/logger");
+const fs = require("fs");
 
 let apiKey;
 let secretKey;
@@ -22,11 +22,11 @@ let domain;
 // 	domain = `@kasori-ko.lakeel.com`
 // } else if (process.env.NODE_ENV == 'production') {
 // 本番環境用の値を定義
-apiKey = `bcf4291764dd4ca5075ff64613d34c2ece97a4ed9b71970259282f08694cc632`
-secretKey = `e6ddba4bd17bc5f9c4bd3e8b3e61f48246d23e9550c26f087abb5af46a1a1b02`
-hostname = `lmlai.lakeel.com`
-developer = `kasori-ko@xmpp.legendapl.com`
-domain = `@xmpp.legendapl.com`
+apiKey = `bcf4291764dd4ca5075ff64613d34c2ece97a4ed9b71970259282f08694cc632`;
+secretKey = `e6ddba4bd17bc5f9c4bd3e8b3e61f48246d23e9550c26f087abb5af46a1a1b02`;
+hostname = `lmlai.lakeel.com`;
+developer = `5d8dc366e4b0f84c2b724daa@muc.xmpp.legendapl.com`;
+domain = `@xmpp.legendapl.com`;
 
 // 本番環境用の値を定義
 // apiKey = `00f305a955468f41d74cfdb68d2776a353e5d88ab26f90fcae76914fbd6f6bac`
@@ -36,61 +36,70 @@ domain = `@xmpp.legendapl.com`
 // domain = `@xmpp.legendapl.com`
 // }
 
-router.post('/send', function (req, res) {
-	let messageJson;
-	try {
-		messageJson = JSON.parse(req.body)
-	} catch (e) {
-		res.status = 400
-		res.json({ error: `JSON parse error. Check request body.[${JSON.stringify(req.body)}]` })
-		return
-	}
-	co(function* () {
-		if(messageJson.message === `JSON parse error. Check request body.`){
-			return;
-		}
+router.post("/send", function(req, res) {
+  let messageJson;
+  try {
+    messageJson = JSON.parse(req.body);
+  } catch (e) {
+    res.status = 400;
+    res.json({
+      error: `JSON parse error. Check request body.[${JSON.stringify(
+        req.body
+      )}]`
+    });
+    return;
+  }
+  co(function*() {
+    if (messageJson.message === `JSON parse error. Check request body.`) {
+      return;
+    }
 
-		let bot = new messenger.Client(hostname, apiKey, secretKey)
-		console.log(yield bot.sendMessage(developer, `
+    let bot = new messenger.Client(hostname, apiKey, secretKey);
+    console.log(
+      yield bot.sendMessage(
+        developer,
+        `
 		「${messageJson.message}」
-		`.dedent()))
-		res.status = 200
-		res.json({ message: 'OK' })
+		`.dedent()
+      )
+    );
+    res.status = 200;
+    res.json({ message: "OK" });
+  }).catch(err => logger.error("UserSearch : " + err));
+});
 
-	}).catch(err => logger.error("UserSearch : " + err))
-})
+router.get("/talks", function(req, res) {
+  co(function*() {
+    let kasori = new messenger.Client(
+      hostname,
+      `1737b3658fb89cf9a2ac029e034176aa30ca84465084f0442ad9955f00fa43d4`,
+      `9ed64bfc535e424d354b00ba5c54556035a7884402d3c1a8861a77c119c0f660`
+    );
+    let talks = yield kasori.getTalks(`?force=true`);
+    res.status = 200;
+    res.json(talks);
+    // sqliteService.insertHistory(messageJson.replyToJid, messageJson.userName, messageJson.data)
+  }).catch(err => logger.error("UserSearch : " + err));
+});
 
-router.get('/talks', function (req, res) {
+router.get("/messages/:to", function(req, res) {
+  co(function*() {
+    let to = req.params.to;
 
-	co(function* () {
+    let kasori = new messenger.Client(
+      hostname,
+      `1737b3658fb89cf9a2ac029e034176aa30ca84465084f0442ad9955f00fa43d4`,
+      `9ed64bfc535e424d354b00ba5c54556035a7884402d3c1a8861a77c119c0f660`
+    );
+    let messages = yield kasori.receiveMessage(to, `?force=true`);
+    res.status = 200;
+    res.json(messages);
+    // sqliteService.insertHistory(messageJson.replyToJid, messageJson.userName, messageJson.data)
+  }).catch(err => logger.error("UserSearch : " + err));
+});
+module.exports = router;
 
-		let kasori = new messenger.Client(hostname, `1737b3658fb89cf9a2ac029e034176aa30ca84465084f0442ad9955f00fa43d4`, `9ed64bfc535e424d354b00ba5c54556035a7884402d3c1a8861a77c119c0f660`)
-		let talks = yield kasori.getTalks(`?force=true`)
-		res.status = 200
-		res.json(talks)
-		// sqliteService.insertHistory(messageJson.replyToJid, messageJson.userName, messageJson.data)
-	}).catch(err => logger.error("UserSearch : " + err))
-
-})
-
-router.get('/messages/:to', function (req, res) {
-
-	co(function* () {
-
-		let to = req.params.to
-
-		let kasori = new messenger.Client(hostname, `1737b3658fb89cf9a2ac029e034176aa30ca84465084f0442ad9955f00fa43d4`, `9ed64bfc535e424d354b00ba5c54556035a7884402d3c1a8861a77c119c0f660`)
-		let messages = yield kasori.receiveMessage(to, `?force=true`)
-		res.status = 200
-		res.json(messages)
-		// sqliteService.insertHistory(messageJson.replyToJid, messageJson.userName, messageJson.data)
-	}).catch(err => logger.error("UserSearch : " + err))
-
-})
-module.exports = router
-
-
-router.get('/', function (req, res) {
-	res.status = 200
-	res.json({ message: `ok` })
-})
+router.get("/", function(req, res) {
+  res.status = 200;
+  res.json({ message: `ok` });
+});
