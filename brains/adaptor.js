@@ -59,7 +59,7 @@ router.post("/send", function(req, res) {
       yield bot.sendMessage(
         messageJson.to ? messageJson.to : developer,
         `
-		「${messageJson.message}」
+		${messageJson.message}
 		`.dedent()
       )
     );
